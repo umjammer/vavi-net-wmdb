@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+
+<digester-rules>
+
+  <object-create-rule pattern="METADATA/MDR-CD" classname="Album" />
+  
+  <call-method-rule pattern="METADATA/MDR-CD/albumTitle" methodname="setTitle" paramcount="0" />
+  <call-method-rule pattern="METADATA/MDR-CD/albumArtist" methodname="setArtist" paramcount="0" />
+  <call-method-rule pattern="METADATA/MDR-CD/genre" methodname="setGenre" paramcount="0" />
+
+  <pattern value="METADATA/MDR-CD/track">
+    <object-create-rule classname="Track" />
+    
+    <!-- paramcount は自分を除くので -1 されている -->
+    <!-- primitive 型はラッパークラスを指定する -->
+    <call-method-rule pattern="trackNumber" methodname="setNumber" paramcount="0" paramtypes="java.lang.Integer" />
+    <call-method-rule pattern="trackTitle" methodname="setTitle" paramcount="0" />
+    <set-next-rule methodname="addTrack" />
+  </pattern>
+</digester-rules>
