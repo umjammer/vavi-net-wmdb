@@ -17,9 +17,9 @@ import vavi.util.device.cd.CD;
 
 
 /**
- * .cda file ‚©‚ç CD î•ñ‚ğ“¾‚éƒNƒ‰ƒX‚Å‚·D
+ * .cda file ã‹ã‚‰ CD æƒ…å ±ã‚’å¾—ã‚‹ã‚¯ãƒ©ã‚¹ã§ã™ï¼
  * 
- * TODO Å“K‰»‚µ‚ë!
+ * TODO æœ€é©åŒ–ã—ã‚!
  * 
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 020424 nsano initial version <br>

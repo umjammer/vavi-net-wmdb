@@ -39,7 +39,7 @@ public class Test_900_1 {
 
         // ----
 
-        // ƒƒ\ƒbƒh‚ðŽg—p‚µ‚Ä digester ‚ðì¬
+        // ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä½¿ç”¨ã—ã¦ digester ã‚’ä½œæˆ
         XMLReader reader = XMLReaderFactory.createXMLReader();
         Digester d = new Digester(reader);
 
@@ -55,7 +55,7 @@ public class Test_900_1 {
         d.addBeanPropertySetter("METADATA/MDR-CD/track/trackNumber", "number");
         d.addBeanPropertySetter("METADATA/MDR-CD/track/trackTitle", "title");
 
-        // “Ç‚Ýž‚Ý
+        // èª­ã¿è¾¼ã¿
         Album album = (Album) d.parse(uc.getInputStream());
         Debug.println(StringUtil.paramStringDeep(album));
 

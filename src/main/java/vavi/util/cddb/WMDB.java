@@ -35,8 +35,8 @@ import vavi.util.win32.MSF;
  * <pre>
  * services.windowsmedia.com:80
  *
- * GET /cdinfo/querytoc.asp?cd=‹È”+$2+$3+...+$n+$LEADOUT HTTP/1.1
- * Accept: *^*
+ * GET /cdinfo/querytoc.asp?cd=æ›²æ•°+$2+$3+...+$n+$LEADOUT HTTP/1.1
+ * Accept: *ï¼*
  * User-Agent: Windows-Media-Player/7.01.00.3055
  * Accept-Encoding: gzip, deflate
  * Cookie: 
@@ -77,7 +77,7 @@ public class WMDB {
     /**
      * Creates an WMDB object.
      *
-     * @param path ¡‚Ì‚Æ‚±‚ëƒhƒ‰ƒCƒuƒŒƒ^[ (i.e. c:, d:)
+     * @param path ä»Šã®ã¨ã“ã‚ãƒ‰ãƒ©ã‚¤ãƒ–ãƒ¬ã‚¿ãƒ¼ (i.e. c:, d:)
      */
     public WMDB(String path) {
 
@@ -344,10 +344,10 @@ e.printStackTrace(System.err);
 
         String data = os.toString("UTF8");
         String dc =
-            "‚`‚a‚b‚c‚d‚e‚f‚g‚h‚i‚j‚k‚l‚m‚n‚o‚p‚q‚r‚s‚t‚u‚v‚w‚x‚y" +
-            "‚‚‚‚ƒ‚„‚…‚†‚‡‚ˆ‚‰‚Š‚‹‚Œ‚‚‚‚‚‘‚’‚“‚”‚•‚–‚—‚˜‚™‚š" +
-            "‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X" +
-            "@ijgh";
+            "ï¼¡ï¼¢ï¼£ï¼¤ï¼¥ï¼¦ï¼§ï¼¨ï¼©ï¼ªï¼«ï¼¬ï¼­ï¼®ï¼¯ï¼°ï¼±ï¼²ï¼³ï¼´ï¼µï¼¶ï¼·ï¼¸ï¼¹ï¼º" +
+            "ï½ï½‚ï½ƒï½„ï½…ï½†ï½‡ï½ˆï½‰ï½Šï½‹ï½Œï½ï½ï½ï½ï½‘ï½’ï½“ï½”ï½•ï½–ï½—ï½˜ï½™ï½š" +
+            "ï¼ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™" +
+            "ã€€ï¼ˆï¼‰â€œâ€";
         String sc =
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
             "abcdefghijklmnopqrstuvwxyz" +

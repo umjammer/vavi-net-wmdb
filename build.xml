@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="Shift_JIS"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- ////////////////////////////////////////////////////////////////////// -->
 <!-- Copyright (c) 2002 by Naohide Sano, All rights reserved.               -->
@@ -21,7 +21,7 @@
   <property name="dir.src" value="src/main/java" />
   <property name="dir.build" value="target/classes" />
 
-  <!-- ƒNƒ‰ƒXƒpƒX‚Ì’è‹` -->
+  <!-- ã‚¯ãƒ©ã‚¹ãƒ‘ã‚¹ã®å®šç¾© -->
   <path id="project.class.path">
     <fileset dir="lib">
       <include name="*.jar" />
@@ -34,10 +34,10 @@
     </fileset>
   </path>
 
-  <!-- ƒ^[ƒQƒbƒg‚Ì’è‹` -->
+  <!-- ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®å®šç¾© -->
 
   <!-- clean -->
-  <target name="clean" description="ƒrƒ‹ƒhŠÂ‹«‚ÌƒNƒŠƒA">
+  <target name="clean" description="ãƒ“ãƒ«ãƒ‰ç’°å¢ƒã®ã‚¯ãƒªã‚¢">
     <delete>
       <fileset dir="${dir.build}">
         <include name="**/*" />
@@ -49,7 +49,7 @@
   </target>
 
   <!-- prepare -->
-  <target name="prepare" description="ƒrƒ‹ƒhŠÂ‹«‚Ì€”õ">
+  <target name="prepare" description="ãƒ“ãƒ«ãƒ‰ç’°å¢ƒã®æº–å‚™">
     <mkdir dir="${dir.build}" />
     <ivy:settings file="ivy-settings.xml" />
     <ivy:convertpom pomFile="pom.xml" ivyFile="ivy.xml" />
@@ -57,7 +57,7 @@
   </target>
 
   <!-- javac -->
-  <target name="compile" depends="prepare" description="ƒRƒ“ƒpƒCƒ‹">
+  <target name="compile" depends="prepare" description="ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«">
 
     <javac debug="on" encoding="MS932" destdir="${dir.build}">
       <classpath refid="project.class.path" />
@@ -76,7 +76,7 @@
   </target>
 
   <!-- cddb -->
-  <target name="cddb" depends="compile" description="ƒvƒƒOƒ‰ƒ€‚ÌŽÀs -Ddrive=e:">
+  <target name="cddb" depends="compile" description="ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®å®Ÿè¡Œ -Ddrive=e:">
     <java classname="vavi.util.cddb.CDDB" fork="yes">
       <classpath>
         <pathelement location="${dir.build}"/>
@@ -87,7 +87,7 @@
   </target>
 
   <!-- wmdb -->
-  <target name="wmdb" depends="compile" description="ƒvƒƒOƒ‰ƒ€‚ÌŽÀs -Ddrive=e:">
+  <target name="wmdb" depends="compile" description="ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®å®Ÿè¡Œ -Ddrive=e:">
     <java classname="vavi.util.cddb.WMDB" fork="yes">
       <classpath>
         <pathelement location="${dir.build}"/>
@@ -98,7 +98,7 @@
   </target>
 
   <!-- cddb on MS -->
-  <target name="cddb.ms" depends="compile" description="ƒvƒƒOƒ‰ƒ€‚ÌŽÀs TODO MessageFormat Žg—p‚µ‚½‚½‚ß“®‚©‚È‚¢">
+  <target name="cddb.ms" depends="compile" description="ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®å®Ÿè¡Œ TODO MessageFormat ä½¿ç”¨ã—ãŸãŸã‚å‹•ã‹ãªã„">
     <exec executable="jview">
       <arg line="-cp target/classes;lib/*.jar"/>
       <arg value="vavi.util.cddb.CDDB"/>
@@ -108,7 +108,7 @@
 
   <!-- run -->
   <property name="drive" value="d:" />
-  <target name="run" depends="compile" description="ƒvƒƒOƒ‰ƒ€‚ÌŽÀs -Ddrive=e:">
+  <target name="run" depends="compile" description="ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®å®Ÿè¡Œ -Ddrive=e:">
     <java classname="vavi.util.cddb.WMDB" fork="yes">
 <!--
       <jvmarg value="-Djava.protocol.handler.pkgs=HTTPClient" />

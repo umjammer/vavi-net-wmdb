@@ -8,23 +8,23 @@ package vavi.util.device.cd;
 
 
 /**
- * CD î•ñ‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX‚Å‚·D
+ * CD æƒ…å ±ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã§ã™ï¼
  * 
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 020424 nsano initial version <br>
  */
 public interface CD {
 
-    /** w’è‚µ‚½ƒgƒ‰ƒbƒN‚ÌƒtƒŒ[ƒ€”‚ğ•Ô‚µ‚Ü‚·D */
+    /** æŒ‡å®šã—ãŸãƒˆãƒ©ãƒƒã‚¯ã®ãƒ•ãƒ¬ãƒ¼ãƒ æ•°ã‚’è¿”ã—ã¾ã™ï¼ */
     public int getTrackLengthAt(int track);
 
-    /** Šeƒgƒ‰ƒbƒN‚ªn‚Ü‚éƒtƒŒ[ƒ€‚ğ•Ô‚µ‚Ü‚·D */
+    /** å„ãƒˆãƒ©ãƒƒã‚¯ãŒå§‹ã¾ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’è¿”ã—ã¾ã™ï¼ */
     public int[] getTrackStarts();
 
-    /** CD ‚Ì‘ƒtƒŒ[ƒ€”‚ğ•Ô‚µ‚Ü‚·D */
+    /** CD ã®ç·ãƒ•ãƒ¬ãƒ¼ãƒ æ•°ã‚’è¿”ã—ã¾ã™ï¼ */
     public int getLength();
 
-    /** CD ‚Ìƒgƒ‰ƒbƒN”‚ğ•Ô‚µ‚Ü‚·D */
+    /** CD ã®ãƒˆãƒ©ãƒƒã‚¯æ•°ã‚’è¿”ã—ã¾ã™ï¼ */
     public int getTracksCount();
 }
 

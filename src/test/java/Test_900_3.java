@@ -40,10 +40,10 @@ Debug.println("content-type: " + uc.getContentType());
 
         //----
 
-        // rule ファイルを指定して digester を作成
+        // rule 繝輔ぃ繧､繝ｫ繧呈欠螳壹＠縺ｦ digester 繧剃ｽ懈��
         Digester d = DigesterLoader.createDigester(new File("digester.xml").toURI().toURL());
 
-        // 読み込み
+        // 隱ｭ縺ｿ霎ｼ縺ｿ
         Album album = (Album) d.parse(uc.getInputStream());
 Debug.println(StringUtil.paramStringDeep(album));
 
