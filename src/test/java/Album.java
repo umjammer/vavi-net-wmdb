@@ -14,8 +14,8 @@ import vavi.util.CharNormalizerJa;
 /**
  * Album.
  *
- * @author	<a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
- * @version	0.00	031221	nsano	initial version <br>
+ * @author    <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
+ * @version    0.00    031221    nsano    initial version <br>
  */
 public class Album {
 
@@ -59,7 +59,7 @@ public class Album {
     }
 
     /** */
-    private List<Track> tracks = new ArrayList<Track>();
+    private List<Track> tracks = new ArrayList<>();
 
     /** */
     public void addTrack(Track track) {

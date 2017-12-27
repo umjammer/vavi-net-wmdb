@@ -15,7 +15,7 @@ import com.ms.win32.Winmm;
  * used to play audio CDs.
  * 
  * @author Keith D. Smith
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 020415 nsano porting <br>
  *          0.01 031220 nsano clean impoerts <br>
  */
@@ -196,7 +196,7 @@ System.err.println("MCI Device " + i + ": " + message);
      * of disc.
      * NOTE: Arguments are in the "mm:ss:ff" format
      *
-     * @param	from	Location on disk to start playing from
+     * @param    from    Location on disk to start playing from
      * @throws  IOException If an IO error occurs
      */
     public static void play(String from) throws IOException {
@@ -341,8 +341,8 @@ System.err.println("MCI Device " + i + ": " + message);
     /**
      * Gets the length of a specific track.
      *
-     * @param	track	Track to lookup
-     * @return	The length of 'track' in "mm:ss:ff" format
+     * @param    track    Track to lookup
+     * @return    The length of 'track' in "mm:ss:ff" format
      * @throws  IOException If an IO error occurs
      */
     public static String getTrackLength(int track) throws IOException {
@@ -405,7 +405,7 @@ System.err.println("MCI Device " + i + ": " + message);
      * @throws  IOException If an IO error occurs
      */
     public static void prevTrack() throws IOException {
-	if (!isReady()) {
+    if (!isReady()) {
             throw new IOException("Drive is not ready.");
         }
 
@@ -432,7 +432,7 @@ System.err.println("MCI Device " + i + ": " + message);
     /**
      * Pauses the CD.
      *
-     * @throws  IOException	If an IO error occurs.
+     * @throws  IOException    If an IO error occurs.
      */
     public static void pause() throws IOException {
         if (isReady() && (!isPaused() || isPlaying())) {
@@ -447,7 +447,7 @@ System.err.println("MCI Device " + i + ": " + message);
      * Opens the CD to receive commands.
      * NOTE: This must be done at the beginning of a new session.
      *
-     * @throws  IOException	If an IO error occurs.
+     * @throws  IOException    If an IO error occurs.
      */
     public static void open() throws IOException {
         Winmm.mciSendString(OPEN, message, MAX_ERROR_SIZE, 0);
@@ -461,8 +461,8 @@ System.err.println("MCI Device " + i + ": " + message);
      * Opens the CD to receive commands.
      * NOTE: This must be done at the beginning of a new session.
      *
-     * @param	drive	ie "d:", "e:"
-     * @throws  IOException	If an IO error occurs.
+     * @param    drive    ie "d:", "e:"
+     * @throws  IOException    If an IO error occurs.
      */
     public static void open(String drive) throws IOException {
         String command = "open cdaudio!" + drive + " alias cdaudio wait";
@@ -476,7 +476,7 @@ System.err.println("MCI Device " + i + ": " + message);
     }
 
     /**
-     * @throws  IOException	If an IO error occurs.
+     * @throws  IOException    If an IO error occurs.
      */
     private static void openImpl() throws IOException {
         

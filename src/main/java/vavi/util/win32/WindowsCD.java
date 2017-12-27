@@ -21,14 +21,14 @@ import vavi.util.device.cd.CD;
  * 
  * TODO 最適化しろ!
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 020424 nsano initial version <br>
  *          0.01 031220 nsano clean imports <br>
  */
 public class WindowsCD implements CD {
 
     /** */
-    private List<CDDA> tracks = new ArrayList<CDDA>();
+    private List<CDDA> tracks = new ArrayList<>();
 
     /** TODO */
     public int getTrackLengthAt(int track) {

@@ -23,7 +23,7 @@ import vavi.util.win32.MSF;
  * http://www.cddb.com
  * </a>
  * <p>
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 020424 nsano initial version <br>
  *          1.00 020424 nsano separate from CDDB <br>
  *          1.10 020504 nsano independent of CD <br>
@@ -89,7 +89,7 @@ public final class CDDBUtil {
      * Generates the CDDB UID for the current disc
      *
      * @return  The 8-character, hex string representing
-     *	  the UID of the current disc
+     *      the UID of the current disc
      */
     public static String getUID(CD cd) {
         // make an array of msf structs for all tracks + lead-out

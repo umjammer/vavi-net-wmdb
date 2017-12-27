@@ -39,13 +39,13 @@ import vavi.util.win32.MSF;
  * Accept: *／*
  * User-Agent: Windows-Media-Player/7.01.00.3055
  * Accept-Encoding: gzip, deflate
- * Cookie: 
+ * Cookie:
  * Connection: Keep-Alive
  * Cache-Control: no-cache
  * Host: services.windowsmedia.com
  * </pre>
  *
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 020418 nsano initial version <br>
  *          0.10 020504 nsano independent of CD class <br>
  *          0.11 020510 nsano add cookie finder <br>
@@ -72,7 +72,7 @@ public class WMDB {
     private String query;
 
     /** The cd class */
-    private static Class clazz;
+    private static Class<?> clazz;
 
     /**
      * Creates an WMDB object.
@@ -84,13 +84,13 @@ public class WMDB {
         CD cd = null;
 
         try {
-            Constructor cons = clazz.getConstructor(String.class);
+            Constructor<?> cons = clazz.getConstructor(String.class);
             cd = (CD) cons.newInstance(path);
         } catch (InvocationTargetException e) {
 Debug.printStackTrace(e);
             throw (RuntimeException) new IllegalStateException().initCause(e.getTargetException());
         } catch (Exception e) {
-            throw (RuntimeException) new IllegalStateException().initCause(e);
+            throw new IllegalStateException(e);
         }
 
         //----
@@ -129,7 +129,7 @@ System.err.println("GET " + query + " HTTP/1.0");
 
         // add base request header
         Properties requestProps = getRequestProperties();
-        Enumeration e = requestProps.propertyNames();
+        Enumeration<?> e = requestProps.propertyNames();
         while (e.hasMoreElements()) {
             String name = (String) e.nextElement();
             String value = requestProps.getProperty(name);
@@ -145,7 +145,7 @@ System.err.println("GET " + query + " HTTP/1.0");
         Properties requestProps = new Properties();
 
         // sets HTTP headers
-        Enumeration e = props.propertyNames();
+        Enumeration<?> e = props.propertyNames();
         while (e.hasMoreElements()) {
             String name = (String) e.nextElement();
             if (name.startsWith("wmdb")) {
@@ -278,13 +278,13 @@ e.printStackTrace(System.err);
      *
      * LS: 0x0a
      *
-     * @param	fileName	IE cookie file name
+     * @param fileName IE cookie file name
      */
     Cookie[] getCookies(String fileName) throws IOException {
         IECookieInputStream is =
             new IECookieInputStream(new FileInputStream(fileName));
 
-        List<Cookie> tmp = new ArrayList<Cookie>();
+        List<Cookie> tmp = new ArrayList<>();
 
         while (is.available() > 0) {
             String name = is.readLine();
@@ -320,8 +320,8 @@ e.printStackTrace(System.err);
     //-------------------------------------------------------------------------
 
     /**
-     * The main entry point for the application. 
-     * @param	args	drive letter.
+     * The main entry point for the application.
+     * @param args drive letter.
      */
     public static void main(String[] args) throws Exception {
 

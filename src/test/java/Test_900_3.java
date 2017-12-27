@@ -23,7 +23,7 @@ import vavi.util.win32.WindowsCD;
 /**
  * test wmdb.
  * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 031220 nsano initial version <br>
  *          0.01 031228 nsano use digester instead of betwixt <br>
  *          0.02 040530 nsano use digester by file configuration <br>
@@ -45,11 +45,11 @@ Debug.println("content-type: " + uc.getContentType());
 
         // 読み込み
         Album album = (Album) d.parse(uc.getInputStream());
-Debug.println(StringUtil.paramStringDeep(album));
+Debug.println(StringUtil.paramString(album));
 
         //----
 
-	    CD cd = new WindowsCD(args[0]);
+        CD cd = new WindowsCD(args[0]);
         String uid = CDDBUtil.getUID(cd);
 
         //----

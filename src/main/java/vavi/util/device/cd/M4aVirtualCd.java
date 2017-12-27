@@ -78,7 +78,6 @@ System.err.println("track" + (i + 1) + ": " + length);
     String findCDDB(MP4File mp4File) {
         try {
             MP4Tag mp4Tag = MP4Tag.class.cast(mp4File.getTag());
-            @SuppressWarnings("unchecked")
             List<MP4Tag> results = List.class.cast(mp4Tag.getTag("----"));
             for (Object o : results) {
                 if (____.class.isInstance(o)) {

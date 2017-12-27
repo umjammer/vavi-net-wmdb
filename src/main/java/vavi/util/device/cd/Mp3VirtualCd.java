@@ -17,7 +17,7 @@ import vavi.util.tag.id3.MP3File;
 
 
 /**
- * Mp3VirtualCd. 
+ * Mp3VirtualCd.
  *
  * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (umjammer)
  * @version 0.00 2012/05/29 umjammer initial version <br>
@@ -25,7 +25,7 @@ import vavi.util.tag.id3.MP3File;
 public class Mp3VirtualCd implements CD {
 
     /** */
-    List<MP3File> tracks = new ArrayList<MP3File>();
+    List<MP3File> tracks = new ArrayList<>();
 
     /**
      * @param path directory

@@ -22,8 +22,8 @@ import vavi.util.win32.WindowsCD;
 
 /**
  * test wmdb.
- * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ *
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 031220 nsano initial version <br>
  *          0.01 031228 nsano use digester instead of betwixt <br>
  */
@@ -57,7 +57,7 @@ public class Test_900_1 {
 
         // 読み込み
         Album album = (Album) d.parse(uc.getInputStream());
-        Debug.println(StringUtil.paramStringDeep(album));
+        Debug.println(StringUtil.paramString(album));
 
         // ----
 

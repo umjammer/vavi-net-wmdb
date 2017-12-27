@@ -27,18 +27,18 @@ import vavi.util.device.cd.CD;
  * that accepts queries via the HTTP protocol.
  * <p>
  * For more information on the CDDB effort visit:<br>
- *	    http://www.cddb.com/
+ *        http://www.cddb.com/
  * <p>
  * Special thanks to:<br>
  *    Ti Kan, author of xmcd and creator of the CDDB concept
  *    Steve Scherf, author of the CDDB server software
  * <p>
- * @author	Keith D. Smith
- * @author	<a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
- * @version	0.00 020415 nsano porting <br>
- *	     	1.00 020424 nsano complete <br>
- *	     	1.10 020504 nsano independent of CD class <br>
- *	     	2.00 031220 nsano refine <br>
+ * @author Keith D. Smith
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
+ * @version 0.00 020415 nsano porting <br>
+ *          1.00 020424 nsano complete <br>
+ *          1.10 020504 nsano independent of CD class <br>
+ *          2.00 031220 nsano refine <br>
  */
 public class CDDB {
 
@@ -79,7 +79,7 @@ public class CDDB {
     private static String host;
 
     /** The cd class */
-    private static Class clazz;
+    private static Class<?> clazz;
 
     /** */
     private CD cd;
@@ -87,12 +87,12 @@ public class CDDB {
     /**
      * Initializes this with all necessary information to query server
      * and store results.
-     * @param	path	cd drive letter
+     * @param path cd drive letter
      */
     public CDDB(String path) throws IOException {
 
         try {
-            Constructor cons = clazz.getConstructor(new Class[] { String.class });
+            Constructor<?> cons = clazz.getConstructor(new Class[] { String.class });
             this.cd = (CD) cons.newInstance(new Object[] { path });
         } catch (InvocationTargetException e) {
             throw new IllegalStateException(e.getTargetException());
@@ -200,7 +200,7 @@ System.err.println("result: " + result);
         String genre = null;
         String uid = null;
         if ((result % 100) / 10 == 1) {
-            Vector proposed = new Vector();
+            Vector<String> proposed = new Vector<>();
             while (br.ready()) {
                 line = br.readLine();
                 if (line.equals(".")) {
@@ -212,7 +212,7 @@ System.err.println(line);
             if (proposed.size() > 1) {
 System.err.println("there are multiple proposed title, use first one");
             }
-            String target = (String) proposed.elementAt(0);
+            String target = proposed.elementAt(0);
             st = new StringTokenizer(target);
             genre = st.nextToken();
             uid = st.nextToken();
@@ -238,7 +238,7 @@ System.err.println(query);
      * Gets the track offsets in s to form a valid CDDB query
      *
      * @param s The array to URL
-     * @return  The offsets for CDDB query
+     * @return The offsets for CDDB query
      */
     private static String getOffsetsString(int[] s) {
         StringBuffer ret = new StringBuffer();
@@ -258,7 +258,7 @@ System.err.println(query);
             InputStream is = CDDB.class.getResourceAsStream(propsPath);
             props.load(is);
             is.close();
-            
+
             String value = props.getProperty("cddb.server");
             server = (value == null) ? DEFAULT_SERVER : value;
             value = props.getProperty("cddb.port");

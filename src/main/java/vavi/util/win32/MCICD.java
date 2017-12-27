@@ -15,7 +15,7 @@ import vavi.util.win32.MSF;
  * CD Information using MCI.
  * 
  * @author Keith D. Smith
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 020415 nsano porting <br>
  *          1.00 020424 nsano complete <br>
  *          1.01 020424 nsano refine <br>
@@ -37,7 +37,7 @@ public class MCICD implements CD {
     }
 
     /**
-     * @param	drive	ie "d:", "e:"
+     * @param    drive    ie "d:", "e:"
      */
     public MCICD(String drive) throws IOException {
         init(drive);

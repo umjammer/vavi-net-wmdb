@@ -12,8 +12,8 @@ import vavi.util.Debug;
 
 /**
  * test wmdb.
- * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ *
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 031220 nsano initial version <br>
  *          0.01 031228 nsano use digester instead of betwixt <br>
  *          0.02 040530 nsano use digester by file configuration <br>
