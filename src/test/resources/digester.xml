@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="Shift_JIS"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <digester-rules>
 
@@ -11,8 +11,8 @@
   <pattern value="METADATA/MDR-CD/track">
     <object-create-rule classname="Track" />
     
-    <!-- paramcount ‚ÍŽ©•ª‚ðœ‚­‚Ì‚Å -1 ‚³‚ê‚Ä‚¢‚é -->
-    <!-- primitive Œ^‚Íƒ‰ƒbƒp[ƒNƒ‰ƒX‚ðŽw’è‚·‚é -->
+    <!-- paramcount ã¯è‡ªåˆ†ã‚’é™¤ãã®ã§ -1 ã•ã‚Œã¦ã„ã‚‹ -->
+    <!-- primitive åž‹ã¯ãƒ©ãƒƒãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’æŒ‡å®šã™ã‚‹ -->
     <call-method-rule pattern="trackNumber" methodname="setNumber" paramcount="0" paramtypes="java.lang.Integer" />
     <call-method-rule pattern="trackTitle" methodname="setTitle" paramcount="0" />
     <set-next-rule methodname="addTrack" />
